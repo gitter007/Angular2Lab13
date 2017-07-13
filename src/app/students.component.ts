@@ -5,10 +5,10 @@ import { DbService } from './service/db.service';
   selector: 'app-students',
   template: `
     <ul>
-        <li *ngFor="let item of items">{{item.name}}</li>
+        <li *ngFor="let item of items"><a [routerLink]="['profile',item.id]">{{item.name}}</a></li>
     </ul>
   `,
-  styles: []
+  styles: [`li { margin: 0; padding: 0;} `]
 })
 export class StudentsComponent implements OnInit {
     value = '';
