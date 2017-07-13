@@ -1,8 +1,7 @@
 import { Injectable, EventEmitter,OnInit } from '@angular/core';
+import { User} from './user';
 
-class User {
-  constructor(public id:number, public name:string,stuID:number,email:string){}
-}
+
 @Injectable()
 export class DbService implements OnInit{
    private data: User[] = [];
@@ -21,6 +20,20 @@ export class DbService implements OnInit{
     getData() {
        // console.log(this.data);
         return this.data;
+    }
+
+    getdateOfUser(id:number) {
+        let result = null;
+        this.data.forEach(element => {
+
+            if(element.id==id){
+                //console.log(element);
+                result = element;
+            }
+            
+        });
+        return result;
+        //return JSON.stringify(result);
     }
 
   ngOnInit() {
