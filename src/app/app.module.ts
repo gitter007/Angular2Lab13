@@ -10,6 +10,8 @@ import { HomeComponent } from './home.component';
 import { StudentsComponent } from './students.component';
 import { ProfileComponent } from './profile.component';
 import { ErrorComponent } from './error.component';
+import { ProfileGuardService } from "./profile-guard.service";
+import { DbService } from './service/db.service';
 
 // import { RouteComponent } from './params/route.component';
 
@@ -28,7 +30,7 @@ import { ErrorComponent } from './error.component';
     HttpModule,
     myRoutes // add it to imports
   ],
-  providers: [],
+  providers: [DbService,ProfileGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

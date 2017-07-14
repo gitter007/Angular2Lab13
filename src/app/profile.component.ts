@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
     this.subscription = route.params.subscribe(
       (params: any) => {
         this.id = params['id'];
-        this.user= dbService.getdateOfUser(this.id);
+        this.user= dbService.getDataOfUser(this.id);
 
       }        
     );

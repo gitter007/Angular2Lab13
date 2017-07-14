@@ -9,8 +9,7 @@ import {ErrorComponent} from './error.component';
 const MY_ROUTES: Routes = [
      { path: '', component: HomeComponent },
      { path: 'students', component: StudentsComponent },
-     { path: 'students/profile/:id', component: ProfileComponent},
-
+     { path: 'students/profile/:id', component: ProfileComponent, canActivate: [ProfileGuardService]},
      { path: '**',component: ErrorComponent }
 ];
 

@@ -44,7 +44,7 @@ export class DbService implements OnInit{
         return this.data;
     }
 
-    getdateOfUser(id:number) {
+    getDataOfUser(id:number) {
         let result = null;
         this.data.forEach(element => {
 

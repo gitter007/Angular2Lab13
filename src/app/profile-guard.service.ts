@@ -5,20 +5,16 @@ import { DbService } from './service/db.service';
 
 @Injectable()
 export class ProfileGuardService implements CanActivate{
-    private subscription: Subscription;
-    constructor(private db: DbService, private route: Router) { }
+    constructor(private dbService: DbService, private route: Router) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-
-        if (!this.db.getData().find(x => x.id === route.params['id'])) {
-            this.route.navigate(['error']);
-            return false;
+        if (this.dbService.getDataOfUser(route.params['id'])) {
+                return true;
         }
-
-        return true;
+        this.route.navigate(['error']);
+        return false;
     }
     ngOnDestroy() {
-        this.subscription.unsubscribe();
     }
 
 }
