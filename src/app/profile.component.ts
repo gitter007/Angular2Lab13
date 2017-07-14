@@ -6,11 +6,12 @@ import {User} from './service/user';
 @Component({
   selector: 'app-profile',
   template: `
+        <h3>User details</h3>
     <p>
-      {{user.id}}
-      {{user.name}}
-      {{user.name}}
-      {{user.name}}
+      ID: {{user.id}} <br>
+      Name: {{user.name}}<br>
+      Student id: {{user.stuID}}<br>
+      Email: {{user.email}}
     </p>
   `,
   styles: []
@@ -24,8 +25,9 @@ export class ProfileComponent implements OnInit,OnDestroy {
     this.subscription = route.params.subscribe(
       (params: any) => {
         this.id = params['id'];
-        this.user = dbService.getdateOfUser(this.id);
-
+        this.user= dbService.getdateOfUser(this.id);
+        //this.user = JSON.parse(dbService.getdateOfUser(this.id));
+        //console.log(this.user.result);
       }        
     );
   }

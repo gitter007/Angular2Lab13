@@ -10,5 +10,5 @@ import { NgModule } from '@angular/core';
   ],
 })
 export class User {
-    constructor(public id:number, public name:string,stuID:number,email:string){}
+    constructor(public id:number, public name:string,public stuID:number,public email:string){}
  }

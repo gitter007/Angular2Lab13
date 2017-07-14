@@ -18,7 +18,7 @@ export class DbService implements OnInit{
     }
 
     getData() {
-       // console.log(this.data);
+      //  console.log(this.data);
         return this.data;
     }
 
@@ -27,13 +27,13 @@ export class DbService implements OnInit{
         this.data.forEach(element => {
 
             if(element.id==id){
-                //console.log(element);
+               // console.log(element);
                 result = element;
             }
             
         });
         return result;
-        //return JSON.stringify(result);
+        //return JSON.stringify({result});
     }
 
   ngOnInit() {
