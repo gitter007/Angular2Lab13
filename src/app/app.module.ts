@@ -9,6 +9,8 @@ import { myRoutes } from "./app.routes";
 import { HomeComponent } from './home.component';
 import { StudentsComponent } from './students.component';
 import { ProfileComponent } from './profile.component';
+import { ErrorComponent } from './error.component';
+
 // import { RouteComponent } from './params/route.component';
 
 @NgModule({
@@ -17,6 +19,7 @@ import { ProfileComponent } from './profile.component';
     HomeComponent,
     StudentsComponent,
     ProfileComponent,
+    ErrorComponent
     // RouteComponent
   ],
   imports: [
